@@ -89,9 +89,6 @@ public class PersonelController : ControllerBase
 
             BirimId = createDto.BirimId,
             UnvanId = createDto.UnvanId,
-            IlId = createDto.IlId,
-            IlceId = createDto.IlceId,
-
             Maas = createDto.Maas,
             Prim = createDto.Prim,
             CalismaSaati = createDto.CalismaSaati

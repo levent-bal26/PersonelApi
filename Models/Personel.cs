@@ -1,39 +1,39 @@
 using System.ComponentModel.DataAnnotations;
-
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonelApi.Models;
 
 public class Personel
 {
-    public int PersonelId { get; set; } // PK
+    public int PersonelId { get; set; }
 
     [Required]
-    public string Ad{ get; set; } = string.Empty;
+    public string Ad { get; set; } = string.Empty;
 
-   [Required]
+    [Required]
     public string Soyad { get; set; } = string.Empty;
 
-   [Required]
+    [Required]
     public string Cinsiyet { get; set; } = string.Empty;
-    
+
     public DateTime DogumTarihi { get; set; }
 
-   [Required]
+    [Required]
     public string DogumYeri { get; set; } = string.Empty;
 
-    public DateTime BaslamaTarihi { get; set; } 
+    public DateTime BaslamaTarihi { get; set; }
 
     public int BirimId { get; set; }
+    public Birim Birim { get; set; } = null!;
 
     public int UnvanId { get; set; }
+    public Unvan Unvan { get; set; } = null!;
 
     public byte CalismaSaati { get; set; }
 
-   [Column(TypeName = "decimal(18,2)")]
-   public decimal Maas { get; set; }
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal Maas { get; set; }
 
-  [Column(TypeName = "decimal(18,2)")]
-  public decimal Prim { get; set; } = 0m;
-
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal Prim { get; set; } = 0m;
 }
