@@ -29,7 +29,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("BirimId");
 
-                    b.ToTable("Birimler");
+                    b.ToTable("Birimler", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Cocuk", b =>
@@ -62,7 +62,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("CocukId");
 
-                    b.ToTable("Cocuklar");
+                    b.ToTable("Cocuklar", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Gorevlendirme", b =>
@@ -80,7 +80,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("GorevlendirmeId");
 
-                    b.ToTable("Gorevlendirmeler");
+                    b.ToTable("Gorevlendirmeler", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Il", b =>
@@ -95,7 +95,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("IlId");
 
-                    b.ToTable("Iller");
+                    b.ToTable("Iller", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Ilce", b =>
@@ -113,7 +113,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("IlceId");
 
-                    b.ToTable("Ilceler");
+                    b.ToTable("Ilceler", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Personel", b =>
@@ -161,11 +161,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("PersonelId");
 
-                    b.HasIndex("BirimId");
-
-                    b.HasIndex("UnvanId");
-
-                    b.ToTable("Personeller");
+                    b.ToTable("Personeller", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Proje", b =>
@@ -186,7 +182,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("ProjeId");
 
-                    b.ToTable("Projeler");
+                    b.ToTable("Projeler", (string)null);
                 });
 
             modelBuilder.Entity("PersonelApi.Models.Unvan", b =>
@@ -201,26 +197,7 @@ namespace PersonelApi.Migrations
 
                     b.HasKey("UnvanId");
 
-                    b.ToTable("Unvanlar");
-                });
-
-            modelBuilder.Entity("PersonelApi.Models.Personel", b =>
-                {
-                    b.HasOne("PersonelApi.Models.Birim", "Birim")
-                        .WithMany()
-                        .HasForeignKey("BirimId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PersonelApi.Models.Unvan", "Unvan")
-                        .WithMany()
-                        .HasForeignKey("UnvanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Birim");
-
-                    b.Navigation("Unvan");
+                    b.ToTable("Unvanlar", (string)null);
                 });
 #pragma warning restore 612, 618
         }
